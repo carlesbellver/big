@@ -1,4 +1,4 @@
-let ASPECT_RATIO = window.BIG_ASPECT_RATIO === undefined ? 16/9 : window.BIG_ASPECT_RATIO;
+let ASPECT_RATIO = window.BIG_ASPECT_RATIO === undefined ? false : window.BIG_ASPECT_RATIO;
 
 function parseHash() {
   return parseInt(window.location.hash.substring(1), 10);
