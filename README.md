@@ -1,8 +1,9 @@
 # Big
 
-<p align="center">
-  <img width="540" src='.github/logo.png' />
-</p>
+## My changes:
+
+- If you include one `&lt;img&gt;` in a slide, it will be displayed as slide background.
+- You can set background opacity in your theme (default value 0.66).
 
 <p align="center">
   <strong>Big.</strong> The antidote to your presentation procrastination.

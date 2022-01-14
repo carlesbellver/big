@@ -1,4 +1,4 @@
-let ASPECT_RATIO = window.BIG_ASPECT_RATIO === undefined ? 1.6 : window.BIG_ASPECT_RATIO;
+let ASPECT_RATIO = window.BIG_ASPECT_RATIO === undefined ? 16/9 : window.BIG_ASPECT_RATIO;
 
 function parseHash() {
   return parseInt(window.location.hash.substring(1), 10);
@@ -15,12 +15,25 @@ function ce(type, className = "") {
 addEventListener("load", () => {
   let slideDivs = Array.from(document.querySelectorAll("body > div"));
   let pc = document.body.appendChild(ce("div", "presentation-container"));
+  slideNo = 0;
   slideDivs = slideDivs.map((slide, _i) => {
     slide.setAttribute("tabindex", 0);
     slide.classList.add("slide");
+    slideNo++; 
+    slide.id = 's'+slideNo;
     let sc = pc.appendChild(ce("div", "slide-container"));
     sc.appendChild(slide);
     return Object.assign(sc, {
+      _images: Array.from(slide.querySelectorAll("img"), imageElement => {
+        headEl = document.getElementsByTagName('head').item(0);
+        styleEl = document.createElement("style");
+        styleEl.type = "text/css"; 
+        styleEl.appendChild(document.createTextNode("#s"+slideNo+":before { content: ''; background-image: url("+imageElement.src+"); position: absolute; background-size: cover; top: 0; right: 0; bottom: 0; left: 0; z-index: -1; opacity: var(--image-opacity); }"));
+        headEl.appendChild(styleEl);
+        /* imageElement.parentNode.style.backgroundImage = 'url('+imageElement.src+')';
+        imageElement.parentNode.style.backgroundSize = 'cover'; */
+        imageElement.parentNode.removeChild(imageElement);
+      }),
       _notes: Array.from(slide.querySelectorAll("notes"), noteElement => {
         noteElement.parentNode.removeChild(noteElement);
         return noteElement.innerHTML.trim();

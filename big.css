@@ -1,3 +1,7 @@
+:root {
+    --image-opacity: 0.66;
+}
+
 html {
   height: 100%;
 }
@@ -109,7 +113,7 @@ body.jump-mode div.slide-container:hover {
 }
 
 .layout img {
-  object-fit: contain;
+  object-fit: cover;
   width: 100%;
   height: 100%;
 }
