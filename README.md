@@ -1,13 +1,11 @@
+**My changes:**
+
+- If you put one `<img>` in a slide, it will be displayed as slide background.
+- You can set background opacity in your theme (default value 0.66).
+
 # Big
 
 A presentation system that works great for creative, hurried people making focused presentations. Stop tweaking fonts and filling slides with text. Big is a configuration-free system that naturally encourages good style.
-
-## My changes:
-
-- If you include one `&lt;img&gt;` in a slide, it will be displayed as slide background.
-- You can set background opacity in your theme (default value 0.66).
-
-## Contents
 
 - [Features](#features)
 - [Quickstart installation: Glitch](#quickstart-installation-glitch)
@@ -23,14 +21,14 @@ A presentation system that works great for creative, hurried people making focus
   - [Backgrounds & body classes](#backgrounds--body-classes)
   - [Themes](#themes)
 
-### Features
+## Features
 
 - The entire system is about 16kb
 - Slide layouts based on CSS Grid
 - Speakers notes appear in your developer console, which you can put on your other screen
 - Themes are just CSS, and easy to make
 
-### Quickstart installation: Glitch
+## Quickstart installation: Glitch
 
 The absolute fastest way to get started is with Glitch. Just click the link below, and you’ll get the freshest version of Big, in a Glitch app that you can edit and publish.
 
@@ -38,7 +36,7 @@ The absolute fastest way to get started is with Glitch. Just click the link belo
 
 With Glitch, your presentation will be online and open source by default. You can download it and continue to work on it offline, or if you want to start offline by default and have the files locally, follow the alternative method below 👇
 
-### Alternative method: Local installation
+## Alternative method: Local installation
 
 If you use NPM, the fastest way to get a copy of Big is this way:
 
@@ -53,7 +51,7 @@ $ npm install -g serve
 $ serve
 ```
 
-### Writing a presentation
+## Writing a presentation
 
 Big presentations are webpages: slides are `div` elements, and any text styling or additional elements are addable by using HTML. The text in each div is sized to fit the screen. A slide can be as simple as:
 
@@ -74,7 +72,7 @@ Open your [developer console](http://debugbrowser.com/), and you'll see your spe
 
 That's all you need to start writing presentations!
 
-### Giving presentations
+## Giving presentations
 
 You can advance slides the usual way, by clicking them. You can also use the left & right arrow keys, and the up and down arrow keys. On touch devices, you can navigate forward by tapping and also navigate forward and backwards by swiping.
 
@@ -88,11 +86,11 @@ Big also has three modes if you want to quickly jump to a slide, or print a pres
 * **j**ump: Shows many slides per page, useful for quickly finding a slide and 'jumping' to it. When you're in jump mode, you can use the arrow keys to quickly select a slide and hit Enter to jump to that slide, or click the
   slide you want.
 
-### Using Big
+## Using Big
 
 Big is designed to be simple, so if you just want to give a [Takahashi](https://en.wikipedia.org/wiki/Takahashi_method) style presentation with just text, you don't need to read any further! But it can also go far beyond the basics.
 
-#### Layouts & Images
+### Layouts & Images
 
 Let's say you want to add some pictures to a presentation. If you just want the slide to _be_ an image, you can just make it the only thing on the slide:
 
@@ -143,7 +141,7 @@ Grids read from left to right, top to bottom, unless you customize that with ext
 
 This slide will be laid out vertically, with the image taking up 75% of the vertical space, text 25%.
 
-***Three rows of a 25% image and 75% text***
+**Three rows of a 25% image and 75% text**
 
 ```html
 <div
@@ -158,7 +156,7 @@ This slide will be laid out vertically, with the image taking up 75% of the vert
 </div>
 ```
 
-#### Customizing the aspect ratio
+### Customizing the aspect ratio
 
 To keep presentations uniform across devices, Big keeps the aspect ratio of presentations constant by default: by default, presentations are 4:3 aspect ratio.
 
@@ -176,7 +174,7 @@ You can also turn this feature off, by setting `BIG_ASPECT_RATIO` to `false`, wh
 <script src='big.js'></script>
 ```
 
-#### Avoiding line breaks
+### Avoiding line breaks
 
 By default, Big will wrap lines of text. Sometimes you don't want this to happen, if you have some text that would look odd wrapped. In this case, you can use the `nowrap` class to keep some text from wrapping.
 
@@ -188,7 +186,7 @@ By default, Big will wrap lines of text. Sometimes you don't want this to happen
 </div>
 ```
 
-#### Auto advancing slides
+### Auto advancing slides
 
 Sometimes you'll give presentations like [PechaKucha](https://en.wikipedia.org/wiki/PechaKucha) and [Ignite](https://en.wikipedia.org/wiki/Ignite_(event)) involve auto-advancing slides. You can achieve this by adding a `data-time-to-next` attributes to slides: this will cause  them to auto-advance after a specific number of seconds:
 
@@ -198,7 +196,7 @@ Sometimes you'll give presentations like [PechaKucha](https://en.wikipedia.org/w
 </div>
 ```
 
-#### Showing code
+### Showing code
 
 There are many ways to do code highlighting in presentations. My personal
 philosophy is that you should never show more than 8 lines of code
@@ -229,7 +227,7 @@ pre em {
 
 But if you want traditional code highlighting, you can include [highlight.js](https://highlightjs.org/) to do just that. You'll want to include [the library](https://highlightjs.org/download/), and use `hljs.initHighlightingOnLoad();` like [in their usage instructions](https://highlightjs.org/usage/).
 
-#### Backgrounds & body classes
+### Backgrounds & body classes
 
 You might want to customize the class & style of the body element for a single slide. For example, maybe you want to change the background of the full page. You can do this with two attributes: `data-body-style` and `data-body-class`:
 
@@ -239,7 +237,7 @@ You might want to customize the class & style of the body element for a single s
 </div>
 ```
 
-#### Themes
+### Themes
 
 Big presentations are hackable, so you can design yours from scratch, or by customizing one of the default themes, but there are also a few default themes so that you can get going with a solid aesthetic right off the bat.
 
