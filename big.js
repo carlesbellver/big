@@ -30,8 +30,7 @@ addEventListener("load", () => {
         styleEl.type = "text/css"; 
         styleEl.appendChild(document.createTextNode("#s"+slideNo+":before { content: ''; background-image: url("+imageElement.src+"); position: absolute; background-size: cover; top: 0; right: 0; bottom: 0; left: 0; z-index: -1; opacity: var(--image-opacity); }"));
         headEl.appendChild(styleEl);
-        /* imageElement.parentNode.style.backgroundImage = 'url('+imageElement.src+')';
-        imageElement.parentNode.style.backgroundSize = 'cover'; */
+        imageElement.parentNode.parentNode.style.position = 'relative'; // fix background images in jump & print modes
         imageElement.parentNode.removeChild(imageElement);
       }),
       _notes: Array.from(slide.querySelectorAll("notes"), noteElement => {
