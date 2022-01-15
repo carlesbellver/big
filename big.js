@@ -1,4 +1,5 @@
 let ASPECT_RATIO = window.BIG_ASPECT_RATIO === undefined ? false : window.BIG_ASPECT_RATIO;
+let IMAGE_OPACTITY = window.BIG_IMAGE_OPACTITY === undefined ? 0.66 : window.BIG_IMAGE_OPACTITY;
 
 function parseHash() {
   return parseInt(window.location.hash.substring(1), 10);
@@ -27,9 +28,12 @@ addEventListener("load", () => {
       _images: Array.from(slide.querySelectorAll("img"), imageElement => {
         headEl = document.getElementsByTagName('head').item(0);
         styleEl = document.createElement("style");
-        styleEl.type = "text/css"; 
-        styleEl.appendChild(document.createTextNode("#s"+slideNo+":before { content: ''; background-image: url("+imageElement.src+"); position: absolute; background-size: cover; top: 0; right: 0; bottom: 0; left: 0; z-index: -1; opacity: var(--image-opacity); }"));
+        styleEl.type = "text/css";
+        opacity = imageElement.parentNode.textContent.trim() === "" ? 1 : IMAGE_OPACTITY;
+        styleEl.appendChild(document.createTextNode("#s"+slideNo+":before { content: ''; background-image: url("+imageElement.src+"); position: absolute; background-size: cover; top: 0; right: 0; bottom: 0; left: 0; z-index: -1; opacity: "+opacity+"; }"));
         headEl.appendChild(styleEl);
+        imageElement.parentNode.classList.add("photo");
+        imageElement.parentNode.parentNode.style.alignItems = "flex-end";
         imageElement.parentNode.removeChild(imageElement);
       }),
       _notes: Array.from(slide.querySelectorAll("notes"), noteElement => {
@@ -104,6 +108,7 @@ addEventListener("load", () => {
       }
       fontSize += step;
     }
+    sc.style.backgroundColor = slideDiv.style.backgroundColor;
   }
 
   function onPrint() {
