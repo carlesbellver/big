@@ -37,8 +37,14 @@ blockquote+p {
   margin-left: 2em;
 }
 
-em {
+em, i {
   font-style: normal;
+  text-decoration: underline;
+}
+
+strong, b {
+  font-weight: 900;
+  text-decoration: none;
 }
 
 .nowrap {
