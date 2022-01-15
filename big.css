@@ -16,6 +16,27 @@ p {
   margin: 0;
 }
 
+blockquote {
+  margin: 0;
+  padding: 0 0 0 1em;
+}
+
+blockquote:before {
+  content: "“";
+  display: block;
+  font-family: Georgia, serif;
+  font-size: 225%;
+  height: 1px;
+  margin-left: -0.5em;
+  position: relative;
+  top: -0.18em;
+}
+
+blockquote+p {
+  font-size: 50%;
+  margin-left: 2em;
+}
+
 em {
   font-style: normal;
 }
