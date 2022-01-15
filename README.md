@@ -1,5 +1,6 @@
 ## My changes
 
+  - Presentation aspect ratio defaults to window/screen aspect ratio.
   - If you put one `<img...>` in a slide, it will be displayed as background.
     - You can set background opacity 0..1 using `BIG_IMAGE_OPACITY` (in the same way as [`BIG_ASPECT_RATIO`](#customizing-the-aspect-ratio)):
 
