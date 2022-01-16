@@ -1,11 +1,26 @@
-html {
+body {
   height: 100%;
+  background-color: white;
+  color: black;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:before {
+  content: "*";
+}
+
+a:hover {
+  background-color: black;
+  color: white;
 }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Atkinson Hyperlegible', Ubuntu, "Microsoft Sans Serif", "Segoe UI", Ubuntu, Roboto, Oxygen-Sans, Cantarell, "Helvetica Neue", sans-serif;
-  font-variant-numeric: tabular-nums;
-  font-weight: 700;
+  font-variant-numeric: tabular-nums;  font-weight: 700;
   margin: 0;
   padding: 0;
 }
@@ -13,34 +28,38 @@ body {
 h1,
 h2,
 h3,
+blockquote,
+ul, ol, li,
 p {
   margin: 0;
+  padding: 0;
 }
 
 blockquote {
-  margin: 0;
-  padding: 0 0 0 1em;
+  padding-left: 1em;
 }
 
 blockquote:before {
   content: "“";
   display: block;
-  font-family: Georgia, serif;
-  font-size: 225%;
   height: 1px;
   margin-left: -0.5em;
   position: relative;
   top: -0.18em;
+  font-family: Georgia, serif;
+  font-size: 225%;
 }
 
 blockquote+p {
   font-size: 50%;
-  margin-left: 2em;
+  padding-top: 0.25em;
+  padding-left: 2em;
 }
 
 em, i {
   font-style: normal;
   text-decoration: underline;
+  text-decoration-skip: ink;
 }
 
 strong, b {
