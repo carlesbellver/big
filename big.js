@@ -30,7 +30,7 @@ addEventListener("load", () => {
         styleEl = document.createElement("style");
         styleEl.type = "text/css";
         opacity = imageElement.parentNode.textContent.trim() === "" ? 1 : IMAGE_OPACITY;
-        styleEl.appendChild(document.createTextNode("#s"+slideNo+":before { content: ''; background-image: url("+imageElement.src+"); position: absolute; background-size: cover; top: 0; right: 0; bottom: 0; left: 0; z-index: -1; opacity: "+opacity+"; }"));
+        styleEl.appendChild(document.createTextNode("#s"+slideNo+":before { content: ''; background-image: url("+imageElement.src+"); position: absolute; background-size: cover; background-position: center; top: 0; right: 0; bottom: 0; left: 0; z-index: -1; opacity: "+opacity+"; }"));
         headEl.appendChild(styleEl);
         imageElement.parentNode.classList.add("photo");
         imageElement.parentNode.parentNode.style.alignItems = "flex-end";
